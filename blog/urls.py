@@ -1,4 +1,5 @@
-from django.conf.urls import url
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
 from . import views
 
 urlpatterns = [
@@ -9,4 +10,5 @@ urlpatterns = [
 	url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
 	url(r'^post/(?P<pk>[0-9]+)/publish/$', views.post_publish, name='post_publish'),
 	url(r'^post/(?P<pk>[0-9]+)/remove/$', views.post_remove, name='post_remove'),
+	url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
 ]
