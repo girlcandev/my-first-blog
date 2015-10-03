@@ -13,5 +13,12 @@
 			<p>This is my text. Below is a list.</p>
 			<ul><li>rainbows</li><li>unicorns</li><li>glitter</li></ul>
 		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
